@@ -1,0 +1,119 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container chính bao phủ chiều cao màn hình */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header & Footer */
+.header, .footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navigation Menu */
+.nav {
+    background-color: #34495e;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 12px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.2s;
+}
+
+.nav a:hover {
+    color: #f1c40f;
+}
+
+/* Khung bọc Content & Sidebar sắp xếp nằm ngang bằng Flexbox */
+.main-wrapper {
+    display: flex;
+    flex: 1; /* Tự động giãn tối đa chiều cao còn trống */
+    max-width: 1200px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 15px;
+    gap: 20px;
+}
+
+/* Main Content chiếm 3 phần không gian (flex: 3) */
+.content {
+    flex: 3;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.content h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* Sidebar chiếm 1 phần không gian (flex: 1) */
+.sidebar {
+    flex: 1;
+    background-color: #eef2f7;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #dcdfe6;
+}
+
+.sidebar h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+/* RESPONSIVE CHO MOBILE (Kích thước màn hình <= 768px) */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .main-wrapper {
+        flex-direction: column; /* Chuyển Content & Sidebar thành hàng dọc */
+        margin: 10px auto;
+        padding: 0 10px;
+    }
+}
